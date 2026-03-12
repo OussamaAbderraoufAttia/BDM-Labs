@@ -1,0 +1,107 @@
+
+[LOG] Analyse TP4 lancee le : 2026-03-12 13:13:59.413541 
+[LOG] Dossier de travail : c:/Users/s/BDM/TP4/TP4_Regression 
+
+======================================================
+   EXERCICE 1 : REGRESSION LINEAIRE SIMPLE
+======================================================
+
+--- Dimensions et Resume du dataset 'cars' ---
+[1] 50  2
+     speed           dist       
+ Min.   : 4.0   Min.   :  2.00  
+ 1st Qu.:12.0   1st Qu.: 26.00  
+ Median :15.0   Median : 36.00  
+ Mean   :15.4   Mean   : 42.98  
+ 3rd Qu.:19.0   3rd Qu.: 56.00  
+ Max.   :25.0   Max.   :120.00  
+'data.frame':	50 obs. of  2 variables:
+ $ speed: num  4 4 7 7 8 9 10 10 10 11 ...
+ $ dist : num  2 10 4 22 16 10 18 26 34 17 ...
+NULL
+null device 
+          1 
+[SAVE] 1_nuage_points_original.png genere
+
+--- Regression Lineaire: speed ~ dist ---
+
+Call:
+lm(formula = speed ~ dist, data = cars)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-7.5293 -2.1550  0.3615  2.4377  6.4179 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  8.28391    0.87438   9.474 1.44e-12 ***
+dist         0.16557    0.01749   9.464 1.49e-12 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 3.156 on 48 degrees of freedom
+Multiple R-squared:  0.6511,	Adjusted R-squared:  0.6438 
+F-statistic: 89.57 on 1 and 48 DF,  p-value: 1.49e-12
+
+null device 
+          1 
+[SAVE] 2_regression_lineaire.png genere
+
+--- Transformation Logarithmique ---
+null device 
+          1 
+[SAVE] 3_nuage_points_log.png genere
+
+--- Regression Lineaire Log: log(speed) ~ log(dist) ---
+
+Call:
+lm(formula = log(speed) ~ log(dist), data = cars)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.71143 -0.09269  0.04464  0.14252  0.36583 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  1.04422    0.14417   7.243 3.12e-09 ***
+log(dist)    0.45753    0.03984  11.484 2.26e-15 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.2166 on 48 degrees of freedom
+Multiple R-squared:  0.7331,	Adjusted R-squared:  0.7276 
+F-statistic: 131.9 on 1 and 48 DF,  p-value: 2.259e-15
+
+null device 
+          1 
+[SAVE] 4_regression_log.png genere
+
+======================================================
+   EXERCICE 2 : DESCENTE DE GRADIENT
+======================================================
+
+Attention: Pour eviter la divergence de l'algorithme avec alpha=0.01,
+les donnees X (speed) et Y (dist) ont ete standardisees (moyenne=0, ecart-type=1).
+
+--- Execution de la Descente de Gradient (classique) ---
+Meilleurs parametres trouves : p0 (intercept) =  1.660477e-16 , p1 (slope) =  0.8068523 
+Cout minimal atteint :  0.1709711 
+null device 
+          1 
+[SAVE] 5_convergence_gradient.png genere
+
+Verification (Verification avec lm() sur donnees scalees):
+ (Intercept)     X_scaled 
+8.705913e-17 8.068949e-01 
+
+--- Descente de Gradient avec Regularisation (L2 - Ridge) ---
+Nouveaux parametres (L2, lambda= 0.5 ) : p0 =  1.663683e-16 , p1 =  0.7987063 
+Remarque: La pente (p1) est plus petite en valeur absolue (shrinkage).
+null device 
+          1 
+[SAVE] 6_convergence_regularisation.png genere
+null device 
+          1 
+[SAVE] 7_comparaison_droites.png genere
+
+[LOG] Analyse TP4 terminee avec succes.

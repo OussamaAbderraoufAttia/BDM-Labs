@@ -1,0 +1,303 @@
+
+[LOG] Analyse lancee le : 2026-03-12 13:01:56.726076 
+[LOG] Dossier de travail : c:/Users/s/BDM/TP4/TP3_Bis 
+[LOG] Fichiers sauvegardes dans : c:/Users/s/BDM/TP4/TP3_Bis/results 
+
+[LOG] Chargement des packages...
+
+ ================================================== 
+========== DATASET IRIS ==========
+================================================== 
+
+Dimensions du dataset Iris:
+[1] 150   5
+
+Resume statistique:
+  Sepal.Length    Sepal.Width     Petal.Length    Petal.Width   
+ Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100  
+ 1st Qu.:5.100   1st Qu.:2.800   1st Qu.:1.600   1st Qu.:0.300  
+ Median :5.800   Median :3.000   Median :4.350   Median :1.300  
+ Mean   :5.843   Mean   :3.057   Mean   :3.758   Mean   :1.199  
+ 3rd Qu.:6.400   3rd Qu.:3.300   3rd Qu.:5.100   3rd Qu.:1.800  
+ Max.   :7.900   Max.   :4.400   Max.   :6.900   Max.   :2.500  
+       Species  
+ setosa    :50  
+ versicolor:50  
+ virginica :50  
+                
+                
+                
+[SAVE] iris_data.csv
+
+--- ACP sur Iris ---
+Temps d'execution ACP Iris: 0.01690388 secs 
+
+Valeurs propres (eigenvalues):
+       eigenvalue percentage of variance cumulative percentage of variance
+comp 1 2.91849782             72.9624454                          72.96245
+comp 2 0.91403047             22.8507618                          95.81321
+comp 3 0.14675688              3.6689219                          99.48213
+comp 4 0.02071484              0.5178709                         100.00000
+null device 
+          1 
+[SAVE] iris_acp_screeplot.png
+null device 
+          1 
+[SAVE] iris_acp_individus.png
+null device 
+          1 
+[SAVE] iris_acp_variables.png
+null device 
+          1 
+[SAVE] iris_acp_biplot.png
+
+Nombre de composantes pour >= 80% de variance: 2 
+Variance cumulee:
+   comp 1    comp 2    comp 3    comp 4 
+ 72.96245  95.81321  99.48213 100.00000 
+
+--- Clustering K-means sur Iris (donnees originales) ---
+null device 
+          1 
+[SAVE] iris_elbow_original.png
+
+WSS pour k=1 a 10 :
+ [1] 596.00000 220.87929 138.88836 113.33162  90.20190  79.46554  70.53640
+ [8]  61.82106  54.20678  46.92474
+null device 
+          1 
+[SAVE] iris_elbow_manual.png
+null device 
+          1 
+[SAVE] iris_silhouette_optimal.png
+
+Temps d'execution K-means Iris (original): 0.05277491 secs 
+Taille des clusters:
+[1] 53 47 50
+Centres des clusters:
+  Sepal.Length Sepal.Width Petal.Length Petal.Width
+1  -0.05005221 -0.88042696    0.3465767   0.2805873
+2   1.13217737  0.08812645    0.9928284   1.0141287
+3  -1.01119138  0.85041372   -1.3006301  -1.2507035
+WSS total: 138.8884 
+BSS/TSS ratio: 0.7669658 
+null device 
+          1 
+[SAVE] iris_clusplot_original.png
+Silhouette moyenne (original): 0.4599482 
+  cluster size ave.sil.width
+1       1   53          0.39
+2       2   47          0.35
+3       3   50          0.64
+null device 
+          1 
+[SAVE] iris_silhouette_plot_original.png
+
+--- Clustering K-means sur Iris (composantes principales) ---
+Temps d'execution K-means Iris (PCA): 0.06189203 secs 
+Taille des clusters:
+[1] 47 50 53
+WSS total: 115.0208 
+BSS/TSS ratio: 0.7999219 
+null device 
+          1 
+[SAVE] iris_clusplot_pca.png
+Silhouette moyenne (PCA): 0.5091683 
+  cluster size ave.sil.width
+1       1   47          0.43
+2       2   50          0.65
+3       3   53          0.44
+null device 
+          1 
+[SAVE] iris_silhouette_plot_pca.png
+
+--- Selection d'attributs sur Iris ---
+Temps d'execution selection CFS: 0.07618618 secs 
+Attributs selectionnes:
+[1] "Petal.Length" "Petal.Width" 
+Formule:
+Species ~ Petal.Length + Petal.Width
+<environment: 0x000001774dab0198>
+
+--- Clustering K-means sur Iris (attributs selectionnes) ---
+null device 
+          1 
+[SAVE] iris_elbow_selected.png
+Temps d'execution K-means Iris (selected): 0.07827997 secs 
+Taille des clusters:
+[1] 52 48 50
+WSS total: 17.90678 
+BSS/TSS ratio: 0.9399101 
+null device 
+          1 
+[SAVE] iris_clusplot_selected.png
+Silhouette moyenne (selected): 0.6741313 
+  cluster size ave.sil.width
+1       1   52          0.60
+2       2   48          0.51
+3       3   50          0.90
+null device 
+          1 
+[SAVE] iris_silhouette_plot_selected.png
+
+
+========== COMPARAISON DES RESULTATS IRIS ==========
+Methode                   | WSS        | BSS/TSS    | Silhouette
+----------------------------------------------------------------- 
+Donnees originales        | 138.89     | 0.7670     | 0.4599    
+Composantes principales   | 115.02     | 0.7999     | 0.5092    
+Attributs selectionnes    | 17.91      | 0.9399     | 0.6741    
+
+ ================================================== 
+========== DATASET GLASS ==========
+================================================== 
+
+Dimensions du dataset Glass:
+[1] 214  10
+
+Resume statistique:
+       RI              Na              Mg              Al       
+ Min.   :1.511   Min.   :10.73   Min.   :0.000   Min.   :0.290  
+ 1st Qu.:1.517   1st Qu.:12.91   1st Qu.:2.115   1st Qu.:1.190  
+ Median :1.518   Median :13.30   Median :3.480   Median :1.360  
+ Mean   :1.518   Mean   :13.41   Mean   :2.685   Mean   :1.445  
+ 3rd Qu.:1.519   3rd Qu.:13.82   3rd Qu.:3.600   3rd Qu.:1.630  
+ Max.   :1.534   Max.   :17.38   Max.   :4.490   Max.   :3.500  
+       Si              K                Ca               Ba       
+ Min.   :69.81   Min.   :0.0000   Min.   : 5.430   Min.   :0.000  
+ 1st Qu.:72.28   1st Qu.:0.1225   1st Qu.: 8.240   1st Qu.:0.000  
+ Median :72.79   Median :0.5550   Median : 8.600   Median :0.000  
+ Mean   :72.65   Mean   :0.4971   Mean   : 8.957   Mean   :0.175  
+ 3rd Qu.:73.09   3rd Qu.:0.6100   3rd Qu.: 9.172   3rd Qu.:0.000  
+ Max.   :75.41   Max.   :6.2100   Max.   :16.190   Max.   :3.150  
+       Fe          Type  
+ Min.   :0.00000   1:70  
+ 1st Qu.:0.00000   2:76  
+ Median :0.00000   3:17  
+ Mean   :0.05701   5:13  
+ 3rd Qu.:0.10000   6: 9  
+ Max.   :0.51000   7:29  
+[SAVE] glass_data.csv
+
+--- ACP sur Glass ---
+Temps d'execution ACP Glass: 0.0487752 secs 
+
+Valeurs propres (eigenvalues):
+        eigenvalue percentage of variance cumulative percentage of variance
+comp 1 2.511163726            27.90181918                          27.90182
+comp 2 2.050072185            22.77857983                          50.68040
+comp 3 1.404843994            15.60937771                          66.28978
+comp 4 1.157862446            12.86513829                          79.15492
+comp 5 0.914002247            10.15558052                          89.31050
+comp 6 0.527635193             5.86261325                          95.17311
+comp 7 0.368958443             4.09953826                          99.27265
+comp 8 0.063852948             0.70947720                          99.98212
+comp 9 0.001608818             0.01787575                         100.00000
+null device 
+          1 
+[SAVE] glass_acp_screeplot.png
+null device 
+          1 
+[SAVE] glass_acp_individus.png
+null device 
+          1 
+[SAVE] glass_acp_variables.png
+
+Nombre de composantes pour >= 80% de variance: 5 
+Variance cumulee:
+   comp 1    comp 2    comp 3    comp 4    comp 5    comp 6    comp 7    comp 8 
+ 27.90182  50.68040  66.28978  79.15492  89.31050  95.17311  99.27265  99.98212 
+   comp 9 
+100.00000 
+
+--- Clustering K-means sur Glass (donnees originales) ---
+null device 
+          1 
+[SAVE] glass_elbow_original.png
+null device 
+          1 
+[SAVE] glass_silhouette_optimal.png
+Temps d'execution K-means Glass (original): 0.0798471 secs 
+Taille des clusters:
+[1] 99  2 36 14 27 36
+WSS total: 762.8295 
+BSS/TSS ratio: 0.6020712 
+null device 
+          1 
+[SAVE] glass_clusplot_original.png
+Silhouette moyenne (original): 0.3247314 
+  cluster size ave.sil.width
+1       1   99          0.42
+2       2    2          0.97
+3       3   36          0.28
+4       4   14          0.05
+5       5   27          0.35
+6       6   36          0.17
+null device 
+          1 
+[SAVE] glass_silhouette_plot_original.png
+
+--- Clustering K-means sur Glass (composantes principales) ---
+Temps d'execution K-means Glass (PCA): 0.07041001 secs 
+Taille des clusters:
+[1]  14   3  27  35 101  34
+WSS total: 586.1858 
+BSS/TSS ratio: 0.6592181 
+null device 
+          1 
+[SAVE] glass_clusplot_pca.png
+Silhouette moyenne (PCA): 0.3722673 
+  cluster size ave.sil.width
+1       1   14          0.09
+2       2    3          0.40
+3       3   27          0.52
+4       4   35          0.21
+5       5  101          0.45
+6       6   34          0.32
+null device 
+          1 
+[SAVE] glass_silhouette_plot_pca.png
+
+--- Selection d'attributs sur Glass ---
+Temps d'execution selection CFS: 0.108876 secs 
+Attributs selectionnes:
+[1] "Mg" "Al" "K"  "Ca" "Ba"
+Formule:
+Type ~ Mg + Al + K + Ca + Ba
+<environment: 0x000001774ccafa50>
+
+--- Clustering K-means sur Glass (attributs selectionnes) ---
+null device 
+          1 
+[SAVE] glass_elbow_selected.png
+Temps d'execution K-means Glass (selected): 0.08863211 secs 
+Taille des clusters:
+[1]  21 133  30   2   4  24
+WSS total: 242.7226 
+BSS/TSS ratio: 0.7720914 
+null device 
+          1 
+[SAVE] glass_clusplot_selected.png
+Silhouette moyenne (selected): 0.4904833 
+  cluster size ave.sil.width
+1       1   21          0.36
+2       2  133          0.53
+3       3   30          0.41
+4       4    2          0.99
+5       5    4          0.26
+6       6   24          0.50
+null device 
+          1 
+[SAVE] glass_silhouette_plot_selected.png
+
+
+========== COMPARAISON DES RESULTATS GLASS ==========
+Methode                   | WSS        | BSS/TSS    | Silhouette
+----------------------------------------------------------------- 
+Donnees originales        | 762.83     | 0.6021     | 0.3247    
+Composantes principales   | 586.19     | 0.6592     | 0.3723    
+Attributs selectionnes    | 242.72     | 0.7721     | 0.4905    
+
+
+========== FIN DE L'ANALYSE ==========
+Tous les graphiques et le log ont ete sauvegardes dans le dossier 'results/'
