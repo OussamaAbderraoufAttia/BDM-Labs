@@ -224,44 +224,174 @@ Earlier practical assignments (TP0-2) focused on foundational concepts and prere
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Python 3.7+
-- R 4.0+
-- Required Python packages: pandas, numpy, scikit-learn, matplotlib, seaborn
-- Required R packages: ggplot2, caret, dplyr
+- **Python 3.7+** with pip package manager
+- **R 4.0+** with Rscript support
+- Required Python packages:
+  ```
+  pandas>=1.0
+  numpy>=1.18
+  scikit-learn>=0.22
+  matplotlib>=3.0
+  seaborn>=0.9
+  scipy>=1.5
+  ```
+
+- Required R packages:
+  ```
+  ggplot2
+  caret
+  dplyr
+  ```
+
+### Installation
+
+**Clone the repository:**
+```bash
+git clone https://github.com/OussamaAbderraoufAttia/BDM-Labs.git
+cd BDM-Labs
+```
+
+**Install Python dependencies:**
+```bash
+pip install -r requirements.txt  # if available
+# Or manually install:
+pip install pandas numpy scikit-learn matplotlib seaborn scipy
+```
+
+**Install R packages:**
+```r
+install.packages(c("ggplot2", "caret", "dplyr"))
+```
 
 ### Running the Scripts
 
 **Python Analysis (TP3):**
 ```bash
 cd TP3
-python script.py
-python topdf.py  # Generate PDF reports
+python script.py                    # Run main analysis
+python topdf.py                     # Generate PDF reports
 ```
 
 **R Analysis (TP4):**
 ```bash
+# Extended TP3 Analysis
 cd TP4/TP3_Bis
 Rscript analysis.R
 
+# Regression Analysis
 cd ../TP4_Regression
 Rscript tp4_script.R
 ```
 
 ---
 
-## 📄 Documentation
+## 📚 Learning Resources
 
-Each practical work includes:
-- **LaTeX Reports:** Comprehensive documentation of methodology and results
-- **Result Files:** CSV and TXT outputs containing analysis results
-- **Source Code:** Well-commented Python and R scripts
+### Big Data & Machine Learning Concepts
+
+1. **Data Mining Fundamentals**
+   - Pattern discovery in large datasets
+   - Data quality and preprocessing importance
+   - EDA techniques and visualization
+
+2. **Big Data Ecosystem**
+   - Challenges: Volume, Variety, Velocity
+   - Distributed computing concepts
+   - Scalable algorithms
+
+3. **Machine Learning Basics**
+   - Supervised vs Unsupervised Learning
+   - Training and testing paradigms
+   - Model evaluation metrics
+
+4. **Advanced Topics**
+   - Feature Engineering strategies
+   - Dimensionality reduction techniques
+   - Ensemble methods (Random Forest)
+   - Neural Networks fundamentals
 
 ---
 
-## 📞 Contact
+## 📄 Reports & Documentation
 
-**Student:** Oussama Abderraouf ATTIA  
-**Email:** lo_attia@esi.dz 
+Each practical work includes detailed LaTeX reports with:
+- ✅ Methodology and theoretical background
+- ✅ Implementation details and code snippets
+- ✅ Results visualization and interpretation
+- ✅ Performance metrics and analysis
+- ✅ Conclusions and recommendations
+
+Reports can be compiled from `.tex` files to PDF format.
+
+---
+
+## 🔍 Data Sources
+
+The datasets used in this course are from reputable sources:
+
+- **Iris Dataset** - Multivariate dataset for classification (150 samples, 4 features)
+- **Air Quality Dataset** - Real-world environmental data with missing values
+- **Ionosphere Dataset** - Binary classification problem (UCI repository)
+- **Cars Dataset** - Regression analysis dataset
+- **Glass Dataset** - Multi-class classification dataset
+
+---
+
+## 💡 Key Learnings & Insights
+
+### Practical Lessons
+
+1. **Data is Everything**
+   - Quality data preprocessing impacts model performance by 80%
+   - Missing values require careful handling strategies
+   - Feature scaling is critical for distance-based algorithms
+
+2. **Algorithm Selection**
+   - No single algorithm works best for all problems
+   - Domain knowledge guides algorithm choice
+   - Cross-validation prevents overfitting
+
+3. **Interpretation Matters**
+   - Raw results need statistical interpretation
+   - Visualization helps identify patterns and outliers
+   - Business context determines practical significance
+
+### Challenges Addressed
+
+- Handling incomplete/missing data
+- Dealing with high-dimensional data (PCA)
+- Selecting relevant features
+- Balancing bias-variance tradeoff
+- Evaluating model generalization
+
+---
+
+## 📊 Statistics & Metrics Used
+
+- **Descriptive Statistics:** Mean, Median, Standard Deviation, Variance
+- **Clustering Metrics:** Silhouette Score, Inertia, Davies-Bouldin Index
+- **Classification Metrics:** Accuracy, Precision, Recall, F1-Score
+- **Regression Metrics:** R², MSE, RMSE, MAE
+- **Statistical Tests:** Hypothesis testing, t-tests, ANOVA
+
+---
+
+## 🤝 Collaboration & Credits
+
+**Course Materials:**
+- Designed by: HAMDAD Leila
+- ESI - École Nationale Supérieure d'Informatique
+
+**Implementation:**
+- Oussama Abderraouf ATTIA
+- SIL (Systèmes Informatiques et Logiciels) Specialization
+
+---
+
+## 📞 Contact Information
+
+**Student Email:** [Your Email Here]  
+**GitHub:** [@OussamaAbderraoufAttia](https://github.com/OussamaAbderraoufAttia)  
 **Institution:** ESI (École Nationale Supérieure d'Informatique)
 
 ---
@@ -270,14 +400,19 @@ Each practical work includes:
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
----
-
-## 🙏 Acknowledgments
-
-- HAMDAD Leila for guidance and instruction
-- ESI for providing the educational framework and resources
-- The data mining community for foundational research and methodologies
+> This repository is created for educational purposes as part of the Big Data Mining course at ESI.
 
 ---
 
-**Last Updated:** March 2026
+## 🔗 Additional Resources
+
+- **Scikit-learn Documentation:** [sklearn.org](https://scikit-learn.org/)
+- **R Documentation:** [r-project.org](https://www.r-project.org/)
+- **Big Data Fundamentals:** [Various academic papers and textbooks]
+- **UCI Machine Learning Repository:** [archive.ics.uci.edu](https://archive.ics.uci.edu/ml/)
+
+---
+
+**Last Updated:** March 2026  
+**Repository Status:** Active & Maintained  
+**Academic Year:** 2025-2026
